@@ -32,34 +32,39 @@
       </div>
       <div class="sidebar-header">
         <div class="user-pic">
-          <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+          <img class="img-responsive img-rounded" src="images/mypic-2.jpg"
             alt="User picture">
         </div>
       </div>
       <div class="sidebar-menu">
         <ul>
-          <li class="sidebar-brand">
+          <li class="sidebar-brand p-0">
             <a href="#">
+              <i class="fa fa-home"></i>
               <span>Home</span>
             </a>
           </li>
-          <li class="sidebar-brand">
-            <a href="#">
+          <li class="sidebar-brand p-0">
+            <a href="#" onclick="goTo('education','collapseOne','collapseTwo')">
+              <i class="fa fa-eraser"></i>
               <span>Education</span>
             </a>
           </li>
-          <li class="sidebar-brand">
-            <a href="#">
+          <li class="sidebar-brand p-0">
+            <a href="#" onclick="goTo('skills')">
+              <i class="fa fa-ellipsis-v"></i>
               <span>Skills</span>
             </a>
           </li>
-          <li class="sidebar-brand">
-            <a href="#">
+          <li class="sidebar-brand p-0">
+            <a href="#" onclick="goTo('portfolio')">
+              <i class="fa fa-vote-yea"></i>
               <span>Portfolio</span>
             </a>
           </li>
-          <li class="sidebar-brand">
+          <li class="sidebar-brand p-0">
             <a href="#">
+              <i class="fa fa-phone"></i>
               <span>Contact</span>
             </a>
           </li>
@@ -67,30 +72,12 @@
       </div>
       <!-- sidebar-menu  -->
     </div>
-    <!-- sidebar-content  -->
- <!--    <div class="sidebar-footer">
-      <a href="#">
-        <i class="fa fa-bell"></i>
-        <span class="badge badge-pill badge-warning notification">3</span>
-      </a>
-      <a href="#">
-        <i class="fa fa-envelope"></i>
-        <span class="badge badge-pill badge-success notification">7</span>
-      </a>
-      <a href="#">
-        <i class="fa fa-cog"></i>
-        <span class="badge-sonar"></span>
-      </a>
-      <a href="#">
-        <i class="fa fa-power-off"></i>
-      </a>
-    </div> -->
   </nav>
   <!-- sidebar-wrapper  -->
   <main class="page-content">
     <div class="container-fluid">
       <div class="row">
-         <div class="col-md-6">
+         <div class="col-md-6" id="pageTop">
             <h3>Md. Mohaiminul Islam</h3>
             <p><strong>Web Designer && Developer</strong></p>
             <div class="ml-5">
@@ -104,19 +91,13 @@
             <div class="text-center">
                 <img style="height: 130px; width: 125px; border-radius: 50%;" class="img-responsive img-rounded mt-4" src="images/mypic-1.jpg" alt="Profile Picture">
             </div>
-          </div><!-- 
-        <div class="form-group col-md-12">
-          <div class="card">
-            <div class="card-body alert-info">
-             
-            </div>
           </div>
-        </div> -->
+
         <div class="form-group col-md-12">
           <div class="container">
             <h6 class="mt-2"><strong>Career Summary:</strong></h6>
             <p style="font-size: 15px;">To work with the most professional experts where my technical, database, and management skills will be utilized through hardworking for the growth of the organization as well as to enhance my knowledge about new and emerging trends in the IT sector.</p>
-            <h6 class="mt-2"><strong>Areas of Expertise or Skills:</strong></h6>
+            <h6 class="mt-2" id="skills"><strong>Areas of Expertise or Skills:</strong></h6>
             <div class="mt-2">
               <table class="table">
                 <tbody>
@@ -137,7 +118,7 @@
                         <li><strong>MySql-</strong> Database Management</li>
                         <li>System Analysis & Database Design</li>
                         <li>Technical Documentation Writing</li>
-                        <li>Technical Documentation Writing</li>
+                        <li><strong>Git</strong></li>
                       </ul>
                     </td>
                   </tr>
@@ -165,7 +146,7 @@
             </div>
             <div id="accordion">
               <div class="card">
-                <div class="card-header">
+                <div class="card-header" id="education">
                   <a class="card-link" data-toggle="collapse" href="#collapseOne">
                     Educational Qualification
                   </a>
@@ -385,8 +366,8 @@
           </div>
         </div>
       </div>
-      <h5>Professional Experience</h5>
-      <hr>
+      <h5 id="portfolio">Projects</h5>
+   <!--    <hr>
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
           <div class="card rounded-0 p-0 shadow-sm">
@@ -409,7 +390,7 @@
           </div>
         </div>
       </div>
-      <hr>
+      <hr> -->
 
       <footer class="text-center">
         <div class="mb-2">
@@ -431,5 +412,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="js/function.js"></script>
+    <script src="js/custom.js"></script>
 </body>
 </html>
