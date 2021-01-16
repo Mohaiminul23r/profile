@@ -16,6 +16,10 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    <script src="http://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+    <script type="text/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <link rel="stylesheet" type="text/css" href="css/toastr.min.css">
     <link href="css/custom.css" rel="stylesheet">
 </head>
 
@@ -76,7 +80,7 @@
             </a>
           </li>
           <li class="sidebar-brand p-0">
-            <a href="#" onclick="goTo('pageTop')">
+            <a href="#" onclick="goTo('contact-with-me')">
               <i class="fa fa-phone"></i>
               <span>Contact</span>
             </a>
@@ -398,6 +402,29 @@
       </div>
       <h6 id="portfolio"><strong>Projects</strong></h6>
       <hr>
+      <!-- nav project category items -->
+      <!-- <nav class="navbar navbar-expand-lg navbar-light bg-secondary mb-2">
+        <div class="collapse navbar-collapse" id="navbarItem">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link text-white" style="cursor: pointer; font-size: 18px;">All Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" style="cursor: pointer; font-size: 18px;">Bootstrap</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white disabled" onclick="project()" style="cursor: pointer; font-size: 18px;">Laravel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white disabled" style="cursor: pointer; font-size: 18px;">JavaScript</a>
+            </li>
+          </ul> -->
+          <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+       <!--  </div>
+      </nav> -->
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
           <div class="card rounded-0 p-0 shadow-sm">
@@ -480,6 +507,47 @@
       </div>
       <hr>
       <footer class="text-center">
+        <!-- leave a message form -->
+       <!--  <h6 id="contact-with-me"><strong>Contact With Me</strong></h6> -->
+        <div class="row">
+          <div class="col-md-8 offset-2">
+           <div class="card border-dark">
+            <div class="card-header font-weight-bold" style="font-size: 20px;" id="contact-with-me">
+              Leave a Message
+            </div>
+            <br>
+            <div class="col-md-12">
+              <form id="contact-form">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <input type="name" class="form-control" name="name" id="name" placeholder="Name">
+                    <span class="text-danger d-none font-weight-bold" id="name-validation">Name is required !</span>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <input type="email_address" class="form-control" id="email_address" placeholder="Email Address" name="email_address">
+                    <span class="text-danger d-none font-weight-bold" id="email-validation">Invalid email address !</span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <input type="text" class="form-control" id="email_subj" placeholder="Email Subject" name="email_subj">
+                    <span class="text-danger d-none font-weight-bold" id="subject-validation">Email subject is required !</span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <textarea type="text" class="form-control" id="message" name="message" row="3" placeholder="Type Your Message"></textarea>
+                    <span class="text-danger d-none font-weight-bold" id="message-validation">Message can not be empty !</span>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-primary mb-2" id="sendMsgBtn">Send Message</button>
+                <button type="button" class="btn btn-primary mb-2 btn-outline-secondary" id="resetBtn">Reset</button>
+              </form>
+            </div>
+            </div>
+          </div>
+          </div>
+        </div>
         <div class="mb-2">
           <small>
             © 2020 designed <i class="fa fa-heart" style="color:green;"></i> by - <a target="_blank" rel="noopener noreferrer" href="https://github.com/Mohaiminul23r/">
@@ -494,11 +562,17 @@
 </div>
 <!-- page-wrapper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script type="text/javascript" src="js/toastr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="js/function.js"></script>
     <script src="js/custom.js"></script>
+    <script>
+        CKEDITOR.replace( 'message' );
+    </script>
 </body>
 </html>
