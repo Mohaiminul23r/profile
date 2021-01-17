@@ -16,10 +16,10 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-    <script src="http://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
     <script type="text/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     <link rel="stylesheet" type="text/css" href="css/toastr.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
 </head>
 
@@ -510,7 +510,7 @@
         <!-- leave a message form -->
        <!--  <h6 id="contact-with-me"><strong>Contact With Me</strong></h6> -->
         <div class="row">
-          <div class="col-md-8 offset-2">
+          <div class="col-md-10 offset-1">
            <div class="card border-dark">
             <div class="card-header font-weight-bold" style="font-size: 20px;" id="contact-with-me">
               Leave a Message
@@ -536,16 +536,17 @@
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-12">
-                    <textarea type="text" class="form-control" id="message" name="message" row="3" placeholder="Type Your Message"></textarea>
+                    <textarea type="text" class="form-control" id="message" name="message" row="3"></textarea>
                     <span class="text-danger d-none font-weight-bold" id="message-validation">Message can not be empty !</span>
                   </div>
                 </div>
-                <button type="button" class="btn btn-primary mb-2" id="sendMsgBtn">Send Message</button>
-                <button type="button" class="btn btn-primary mb-2 btn-outline-secondary" id="resetBtn">Reset</button>
+                <div class="text-center mb-2">
+                    <button type="button" class="btn btn-primary mb-2" id="sendMsgBtn">Send Message</button>
+                    <button type="button" class="btn btn-primary mb-2 btn-outline-secondary" id="resetBtn">Reset</button>
+                </div>
               </form>
             </div>
             </div>
-          </div>
           </div>
         </div>
         <div class="mb-2">
@@ -569,10 +570,9 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+        
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     <script src="js/function.js"></script>
-    <script>
-        CKEDITOR.replace( 'message' );
-    </script>
     <script src="js/custom.js"></script>
 </body>
 </html>

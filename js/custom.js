@@ -1,17 +1,29 @@
+ var isSendable = 0;
+ var isNameValid = 0;
+ var isEmailValid = 0;
+ var isEmailSubjectValid = 0;
+ var isMessageValid = 0;
 $(document).ready(function(){
 	 window.scrollTo(0,0);
+	 $('#message').summernote({
+	 	placeholder: 'Type your message...',
+        tabsize: 2,
+        height: 100
+	 });
 
 	 //sending message emaii
 	$('#sendMsgBtn').click(function(){
-		// setTimeout(function(){
-		// 	alert("Message sent successfully.");
-		// },300);
-		let isValidated = validateMessageForm();
-		if(isValidated == true){
+		validateMessageForm();
+      	if(isNameValid == 1 && isEmailValid == 1 && isEmailSubjectValid == 1 && isMessageValid == 1){
+        	isSendable = 1;
+     	 }else{
+        	isSendable = 0;
+      	}
+		if(isSendable == 1){
 			let valid_name = $('#name').val();
 			let valid_email = $('#email_address').val();
 			let valid_email_subj = $('#email_subj').val();
-			let valid_message = CKEDITOR.instances.message.getData();
+		  	let valid_message = $('#message').summernote('code');
 			let message = "Successfully send the Message.";
 			$.confirm({
 			    title: 'Confirm !!',
@@ -83,48 +95,44 @@ function validateMessageForm(){
 	let name = $('#name').val();
 	let email = $('#email_address').val();
 	let email_subj = $('#email_subj').val();
-	let message = CKEDITOR.instances.message.getData();
-
-	let isValid = false;
+	let message = $('#message').summernote('code');
 
 	//validating the input fields
 	if(name == ''){
-		$('#name-validation').removeClass('d-none').text('Name is required !');
-		isValid = false;
-	}else if((name.length)<=2){
-		$(document).find('#name-validation').removeClass('d-none').text('Name should be of at least 3 characters !');
-		isValid = false;
-	}else{
-		$(document).find('#name-validation').addClass('d-none');
-		isValid = true;
-	}
+    	$('#name-validation').removeClass('d-none').text('Name is required !');
+   		isNameValid = 0;
+    }else if((name.length)<=2){
+    	$(document).find('#name-validation').removeClass('d-none').text('Name should be of at least 3 characters !');
+    	isNameValid = 0;
+  	}else{
+    	$(document).find('#name-validation').addClass('d-none');
+    	isNameValid = 1;
+    }
 
 
-	if(IsEmail(email)==false){
+    if(IsEmail(email)==false){
       $('#email-validation').removeClass('d-none');
-      isValid = false;
+      isEmailValid = 0;
     }else{
-    	$(document).find('#email-validation').addClass('d-none');
-    	isValid = true;
+      $(document).find('#email-validation').addClass('d-none');
+      isEmailValid = 1;
     }
 
     if(email_subj == ''){
-		$('#subject-validation').removeClass('d-none');
-		isValid = false;
-	}else{
-		$(document).find('#subject-validation').addClass('d-none');
-		isValid = true;
-	}
+    	$('#subject-validation').removeClass('d-none');
+    	isEmailSubjectValid = 0;
+    }else{
+    	$(document).find('#subject-validation').addClass('d-none');
+    	isEmailSubjectValid = 1;
+    }
 
-	if(message == ''){
-		$('#message-validation').removeClass('d-none');
-		isValid = false;
-	}else{
-		$(document).find('#message-validation').addClass('d-none');
-		isValid = true;
-	}
-
-	return isValid;
+    if(message == ''){
+    	$(document).find('#message-validation').removeClass('d-none');
+    	isMessageValid = 0;
+    }else{
+    	$(document).find('#message-validation').addClass('d-none');
+    	isMessageValid = 1;
+    }
 }
 
 function IsEmail(email) {
@@ -146,5 +154,5 @@ function removeValidationMsg(){
 function resetForm(){
 	removeValidationMsg();
   	$(document).find('#contact-form').trigger("reset");
-  	CKEDITOR.instances.message.setData('');
+  	$('#message').summernote('reset');
 }
