@@ -4,6 +4,7 @@
  var isEmailSubjectValid = 0;
  var isMessageValid = 0;
 $(document).ready(function(){
+
 	 window.scrollTo(0,0);
 	 $('#message').summernote({
 	 	placeholder: 'Type your message...',
@@ -11,7 +12,7 @@ $(document).ready(function(){
         height: 100
 	 });
 
-	 //sending message emaii
+	 //sending message email
 	$('#sendMsgBtn').click(function(){
 		validateMessageForm();
       	if(isNameValid == 1 && isEmailValid == 1 && isEmailSubjectValid == 1 && isMessageValid == 1){
@@ -39,7 +40,7 @@ $(document).ready(function(){
 			            		//SecureToken : "3e663791-178f-4279-a765-d60f81eeb79d",
 			            		Host : "smtp.gmail.com",
 							    Username : "mohaiminul.dev@gmail.com",
-							    Password : "01764983410",
+							    Password : "15103171@email",
 							    To : 'mohaiminul23r@gmail.com',
 							    From : valid_email,
 							    Subject : valid_email_subj,
@@ -71,8 +72,8 @@ $(document).ready(function(){
   		resetForm();
   	});
 
+	 window.scrollTo(0,0);		
 
-  	
 });
 
 
@@ -88,7 +89,6 @@ function goTo(divid, classOne, classTwo){
         scrollTop: elem.offset().top
     }, 500);
 }
-
 
 
 function validateMessageForm(){
@@ -158,3 +158,4 @@ function resetForm(){
   	$(document).find('#contact-form').trigger("reset");
   	$('#message').summernote('reset');
 }
+
