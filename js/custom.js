@@ -1,6 +1,5 @@
 $(document).ready(function(){
-	 window.scrollTo(0,0);
-  
+	 window.scrollTo(0,0);		
 });
 
 function goTo(divid, classOne, classTwo){
@@ -14,3 +13,11 @@ function goTo(divid, classOne, classTwo){
         scrollTop: elem.offset().top
     }, 500);
 }
+
+
+
+	
+
+
+	
+	
